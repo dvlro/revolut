@@ -22,6 +22,7 @@
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-client:2.27" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.containers:jersey-container-servlet:2.27" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.inject:jersey-hk2:2.27" />
+          <element id="library" level="project" name="Gradle: org.apache.clerezza.ext:org.json.simple:0.4" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.9.7" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.9.7" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-common:2.27" />
@@ -29,6 +30,7 @@
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.containers:jersey-container-servlet-core:2.27" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-server:2.27" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2:hk2-locator:2.5.0-b42" />
+          <element id="library" level="project" name="Gradle: com.googlecode.json-simple:json-simple:1.1" />
           <element id="library" level="project" name="Gradle: javax.annotation:javax.annotation-api:1.2" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2:osgi-resource-locator:1.0.1" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.media:jersey-media-jaxb:2.27" />
@@ -41,8 +43,8 @@
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.9.7" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.7" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.clerezza.ext/org.json.simple/0.4/6413efaf11aba2637b8a07f8b9b98c30c99643c7/org.json.simple-0.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.googlecode.json-simple/json-simple/1.1/5e303a03d04e6788dddfa3655272580ae0fc13bb/json-simple-1.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/da76ca59f6a57ee3102f8f9bd9cee742973efa8a/slf4j-api-1.7.25.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-nop/1.7.12/8052427115f80679a17bd2af659c760df39829bd/slf4j-nop-1.7.12.jar" />
         </element>
       </element>
     </root>

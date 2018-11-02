@@ -9,30 +9,29 @@ import java.math.BigDecimal;
 import static junit.framework.TestCase.assertEquals;
 
 /**
- * Created by petre on 11/1/2018.
+ * Created by petre on 11/2/2018.
  */
-public class TestCreateAccount {
+public class TestUpdateAccount {
 
     @Test
-    public void testAlreadyExist() {
+    public void testAccountDoesntExist() {
         AccountRequests req = new AccountRequests();
         String email = "brad@yahoo.com";
-        req.addAccount(email, new BigDecimal("100"));
-        Response r= req.addAccount(email, new BigDecimal("100"));
+        Response r= req.updateAccount(email, new BigDecimal("100"));
 
         JSONObject obj = new JSONObject();
-        obj.put("message", "Account already exists");
+        obj.put("message", "Account doesn't exists");
         assertEquals(r.getEntity(), obj);
     }
 
     @Test
-    public void testSuccessfullyCreateAccount() {
+    public void testSuccessfullyUpdateAccount() {
         AccountRequests req = new AccountRequests();
         String email = "brad@yahoo.com";
         req.addAccount(email, new BigDecimal("100"));
+        req.updateAccount(email, new BigDecimal("500"));
         Response r = req.getAccount(email);
-        Account accountCreated = (Account) r.getEntity();
-        assertEquals(accountCreated.getEmail(), email);
+        Account accountUpdated = (Account) r.getEntity();
+        assertEquals(accountUpdated.getBalance(), new BigDecimal("500"));
     }
-
 }
