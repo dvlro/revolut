@@ -1,8 +1,11 @@
 package io.nobel.myapp.rest;
 
+import io.nobel.myapp.LoadConfigurationListener;
 import io.nobel.myapp.dao.AccountDAO;
 import io.nobel.myapp.model.Account;
 import io.nobel.myapp.service.AccountService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -16,6 +19,9 @@ import java.util.List;
 @Path("/account")
 public class AccountRequests {
 
+
+    private static final Logger LOG = LoggerFactory.getLogger(AccountRequests.class);
+
     private AccountService accountService = new AccountService();
 
     // URI:
@@ -24,7 +30,7 @@ public class AccountRequests {
     @Path("/all")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Response getAccounts() {
-        System.out.println("getAccounts");
+        LOG.info("getAccounts");
         return accountService.listAccounts();
     }
 
@@ -34,7 +40,7 @@ public class AccountRequests {
     @Path("/{email}")
     @Produces({ MediaType.APPLICATION_JSON })
     public Response getAccount(@PathParam("email") String email) {
-        System.out.println("getAccount [" + email + "]");
+        LOG.info("getAccount [" + email + "]");
         return accountService.getAccount(email);
     }
 
@@ -44,7 +50,7 @@ public class AccountRequests {
     @Path("/add/{email}/{balance}")
     @Produces({ MediaType.APPLICATION_JSON })
     public Response addAccount(@PathParam("email") String email, @PathParam("balance") BigDecimal balance) {
-        System.out.println("addAccount [" + email + "|" + balance+"]");
+        LOG.info("addAccount [" + email + "|" + balance+"]");
         return accountService.createAccount(email, balance);
     }
 
@@ -54,7 +60,7 @@ public class AccountRequests {
     @Path("/update/{email}/{balance}")
     @Produces({ MediaType.APPLICATION_JSON })
     public Response updateAccount(@PathParam("email") String email, @PathParam("balance") BigDecimal balance) {
-        System.out.println("updateAccount [" + email + "|" + balance+"]");
+        LOG.info("updateAccount [" + email + "|" + balance+"]");
         return accountService.updateAccount(email, balance);
     }
 
@@ -64,7 +70,7 @@ public class AccountRequests {
     @Path("/transfer/{from}/{balance}/{to}")
     @Produces({ MediaType.APPLICATION_JSON })
     public Response transferMoney(@PathParam("from") String from, @PathParam("balance") BigDecimal balance, @PathParam("to") String to) {
-        System.out.println("transferMoney [" + from + "|" + balance+ "|" +to+"]");
+        LOG.info("transferMoney [" + from + "|" + balance+ "|" +to+"]");
         return accountService.transfer(from, balance, to);
     }
 
@@ -72,7 +78,7 @@ public class AccountRequests {
     @Path("/delete/{email}")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public Response deleteAccount(@PathParam("email") String email) {
-        System.out.println("deleteAccount");
+        LOG.info("deleteAccount");
         return accountService.deleteAccount(email);
     }
 

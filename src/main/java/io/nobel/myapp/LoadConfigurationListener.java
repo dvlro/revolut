@@ -1,5 +1,8 @@
 package io.nobel.myapp;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
@@ -8,15 +11,17 @@ import javax.servlet.ServletContextListener;
  */
 public class LoadConfigurationListener implements ServletContextListener {
 
+    private static final Logger LOG = LoggerFactory.getLogger(LoadConfigurationListener.class);
+
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        System.out.println(this.getClass().getName() + ":: contextInitialized ...");
+        LOG.info(this.getClass().getName() + ":: contextInitialized ...");
 		/*ManagementService.createDAOs();*/
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-        System.out.println(this.getClass().getName() + ":: contextDestroyed ...");
+        LOG.info(this.getClass().getName() + ":: contextDestroyed ...");
 
     }
 }
