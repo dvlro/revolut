@@ -44,7 +44,11 @@ public class AccountDAO {
     public static Account update(String email, BigDecimal balance) {
         // This means no account existed so update failed. return null
         Account account = accountMap.get(email);
-        account.setBalance(balance);
+        if(account != null)
+            account.setBalance(balance);
+        else
+            return null;
+
         if (null == accountMap.replace(account.getEmail(), account)) {
             return null;
         }
